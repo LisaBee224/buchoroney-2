@@ -3,6 +3,7 @@ class CreateGuests < ActiveRecord::Migration
     create_table :guests do |t|
       t.string :first_name, null: false
       t.string :last_name, null: false
+      t.string :email, null: false
       t.references :party, index: true
       t.references :meal, index: true
       t.boolean :attending

@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
 
   def hotels
   end
+
+  def game
+  end
 end

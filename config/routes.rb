@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'static_pages/locations'
 
   get 'static_pages/hotels'
+  get 'static_pages/game'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   root to: "application#index"

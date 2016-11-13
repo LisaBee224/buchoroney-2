@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160907204422) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "guests", force: :cascade do |t|
     t.string   "first_name", null: false
     t.string   "last_name",  null: false
@@ -24,8 +27,8 @@ ActiveRecord::Schema.define(version: 20160907204422) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "guests", ["meal_id"], name: "index_guests_on_meal_id"
-  add_index "guests", ["party_id"], name: "index_guests_on_party_id"
+  add_index "guests", ["meal_id"], name: "index_guests_on_meal_id", using: :btree
+  add_index "guests", ["party_id"], name: "index_guests_on_party_id", using: :btree
 
   create_table "meals", force: :cascade do |t|
     t.string   "desc"

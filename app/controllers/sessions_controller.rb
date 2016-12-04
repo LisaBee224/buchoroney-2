@@ -1,12 +1,12 @@
 class SessionsController < ApplicationController
   def new
-        @guest = Guest.find_by_email(params[:email])
+    @guest = Guest.find_by_email(params[:email])
     if @guest
       @party = @guest.party
       session[:guest_id] = @guest.id
       redirect_to '/parties/show'
     else
-      redirect_to '/login'
+      render :'new'
     end
   end
 

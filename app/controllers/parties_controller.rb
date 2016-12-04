@@ -1,9 +1,10 @@
 class PartiesController < ApplicationController
-def show
 
-end
+  def show
+
+  end
+
   def update
-     binding.pry
     @party.find(params[:id])
     @party.update_attributes
 

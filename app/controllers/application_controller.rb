@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def angular
     @guest = Guest.first
+    binding.pry
     render :json => @guest
   end
 end

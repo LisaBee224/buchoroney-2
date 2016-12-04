@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/angular-route' => 'application#angular'
+  get '/angular' => 'application#angular'
   get 'static_pages/about'
 
   get 'static_pages/locations'

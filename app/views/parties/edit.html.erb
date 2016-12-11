@@ -1,0 +1,31 @@
+<h1>Hey there, <%= current_user.first_name%>! </h1>
+
+    <h2>people in your party:</h2>
+
+    <%= form_for @party do |f| %>
+      <%= f.hidden_field :party_id, value: current_party.id %>
+
+      <% current_party.guests.each do |guest| %>
+        <%= guest.first_name %>
+        <%= form_for guest do |f|%>
+            <%= f.label :attending, "attending?" %>
+            <%= f.radio_button :attending, true, :checked => true %>
+            <%= f.label :attending, "yes!", :value => true %>
+            <%= f.radio_button :attending, false, :checked => false %>
+            <%= f.label :attending, "no", :value => false %>
+
+            <%=f.label :meal_id, "meal choice" %>
+            <%=f.radio_button :meal_id, :checked => 1 %>
+            <%= f.label :meal_id, "chicken", :value => 1 %>
+            <%=f.radio_button :meal_id, :checked => 2 %>
+            <%= f.label :meal_id, "veggie", :value => 2 %>
+            <%=f.radio_button  :meal_id, :checked => 3 %>
+            <%= f.label :meal_id, "pasta", :value => 3 %>
+            <%end%>
+      <%end%>
+
+    <%= f.submit "submit", class: 'btn btn-primary btn-lg' %>
+
+    <%end%>
+
+

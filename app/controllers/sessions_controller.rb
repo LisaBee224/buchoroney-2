@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if @guest
       @party = @guest.party
       session[:guest_id] = @guest.id
-      redirect_to '/parties/show'
+      redirect_to '/parties/edit'
     else
       render :'new'
     end
@@ -15,7 +15,8 @@ class SessionsController < ApplicationController
     if @guest
       @party = @guest.party
       session[:guest_id] = @guest.id
-      redirect_to '/parties/show'
+
+      redirect_to '/parties/edit'
     else
       redirect_to '/login'
     end

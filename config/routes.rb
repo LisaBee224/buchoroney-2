@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get 'static_pages/hotels'
   get 'static_pages/game'
   get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
+
+  post '/login' => 'parties#show'
+
   root to: "application#index"
   resources :parties
   resources :guests

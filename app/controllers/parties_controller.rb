@@ -5,7 +5,7 @@ class PartiesController < ApplicationController
   end
 
   def edit
-    binding.pry
+    @party = Party.find_by(id: params[:id])
   end
 
   def update

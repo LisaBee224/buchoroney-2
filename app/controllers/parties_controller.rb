@@ -1,13 +1,7 @@
 class PartiesController < ApplicationController
 
   def show
-    @guest = Guest.find_by_email(params[:email])
-    if @guest
-      @party = @guest.party
-      redirect_to '/parties/edit'
-    else
-      render :'new'
-    end
+
   end
 
   def edit

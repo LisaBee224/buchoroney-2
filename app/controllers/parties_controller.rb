@@ -9,6 +9,7 @@ class PartiesController < ApplicationController
     @party = Party.find_by(id: params[:id])
     # binding.pry
     @guests = @party.guests
+
   end
 
   def update

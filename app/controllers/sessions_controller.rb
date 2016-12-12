@@ -23,7 +23,6 @@ class SessionsController < ApplicationController
   end
 
 
-
   def destroy
     session[:guest_id] = nil
     redirect_to '/login'

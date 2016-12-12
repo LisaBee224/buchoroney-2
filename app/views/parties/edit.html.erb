@@ -5,9 +5,9 @@
     <%= form_for @party do |f| %>
 
       <%= f.hidden_field :party_id, value: current_party.id %>
-      <%= f.fields_for :guests, @guests do |guests_form| %>
 
-            <%= guests_form.label :attending, "attending?" %>
+      <%= f.fields_for :guests do |guests_form| %>
+
             <%= guests_form.radio_button :attending, true, :checked => true %>
             <%= guests_form.label :attending, "yes!", :value => true %>
             <%= guests_form.radio_button :attending, false, :checked => false %>

@@ -13,7 +13,8 @@ class PartiesController < ApplicationController
 
   def update
     @party = Party.find_by(id: params[:id])
-    @party.guests.update_all
+    @party.guests.update_attributes(params[:party][:guests_attributes])
+    binding.pry
 
     if @party.save
       redirect_to '/login'

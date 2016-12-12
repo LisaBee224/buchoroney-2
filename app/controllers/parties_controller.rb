@@ -5,13 +5,15 @@ class PartiesController < ApplicationController
   end
 
   def edit
-    binding.pry
+
+    @party = Party.find_by(id: params[:id])
+    # binding.pry
+    @guests = @party.guests
   end
 
   def update
-    binding.pry
-    @party.find(params[:id])
-    @party.update_attributes
+    @party = Party.find_by(id: params[:id])
+    @party.guests.update_all
 
     if @party.save
       redirect_to '/login'

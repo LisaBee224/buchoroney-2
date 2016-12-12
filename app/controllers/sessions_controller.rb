@@ -16,21 +16,13 @@ class SessionsController < ApplicationController
       @party = @guest.party
       session[:guest_id] = @guest.id
 
-      redirect_to '/parties/edit'
+      redirect_to "/parties/#{@party.id}/edit"
     else
       redirect_to '/login'
     end
   end
 
-  def update
-     binding.pry
-    @party.find(params[:id])
-    @party.update_attributes
 
-    if @party.save
-      redirect_to '/login'
-    end
-  end
 
   def destroy
     session[:guest_id] = nil

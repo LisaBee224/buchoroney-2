@@ -4,6 +4,9 @@
   and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
   Inspired from:  http://codepen.io/Rowno/pen/Afykb
 */
+.navbar-nav > li{
+  float:none !important;
+}
 .address-map{
   height:300px;
   width:80%;
@@ -18,6 +21,7 @@
 .homenav{
   border:none;
   font-size:1.2em;
+  float:right;
 
 }
 .bio{
@@ -175,8 +179,27 @@ h3{
 .activity-non{
   margin:2em auto;
 }
+.name-overlay{
+  font-size:8em;
+  color:#fff;
+  font-family: 'Satisfy', cursive;
+  margin-top:4em;
+  margin-left:0;
+  position:absolute;
+  z-index:9999;
+}
+.date{
+  font-family: 'Quicksand', sans-serif;
+  color:#fff;
+  font-size:.5em;
+}
+.container-front{
+  float:left;
+  width:85%;
+}
 #myCarousel{
-  margin-top:2em;
+  margin-top:1em;
+
 }
 .draggable{
   font-size:.875em;

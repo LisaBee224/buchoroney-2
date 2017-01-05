@@ -19,10 +19,11 @@
       drop: function( event, ui ) {
         var question = ui.draggable.data('num');
         var answer = $(this).data('num');
-        console.log(question);
-        console.log(answer);
+
         if(question == answer){
               $( this ).find( "p" ).html( "Correct!" );
+              $( this).css("background-color", "#75bcaf");
+              $(this).css("border-color", "#509386");
               ui.draggable('disable');
         }
 
@@ -35,41 +36,97 @@
 
 <h1>How well do you know Lisa and Dave? Test your knowledge!</h1>
 
-<div class="draggable" data-num="lisa">
+<div class="draggable one" data-num="lisa">
   <p>Lisa</p>
 </div>
 
-<div class="draggable" data-num="david">
+<div class="droppable one" data-num="lisa">
+  <p>This person once won a trip to Hollywood to appear as an extra on the show "What I Like About You."</p>
+</div>
+
+<div class="draggable three" data-num="toe">
+  <p>A big toenail.</p>
+</div>
+
+<div class="draggable three" data-num="david">
   <p>David</p>
 </div>
 
-<div class="draggable" data-num="lisa">
+<div class="droppable two" data-num="lisa">
+  <p>This person is terrified of frogs and toads.</p>
+</div>
+
+<div class="draggable two" data-num="lisa">
   <p>Lisa</p>
 </div>
 
-<div class="draggable" data-num="david">
-  <p>David</p>
+
+
+ <div class="droppable one" data-num="lisa">
+  <p>This person lived in Paris for a bit.</p>
 </div>
 
- <div class="droppable" data-num="lisa">
-  <p>This person has traveled to Paris!</p>
+<div class="draggable two" data-num="lisa">
+  <p>Lisa</p>
+</div>
+ <div class="droppable three" data-num="david">
+  <p>Dave hates this.</p>
 </div>
 
 
- <div class="droppable" data-num="david">
-  <p>This person hates condiments (especially ketchup).</p>
-</div>
 
-
-
- <div class="droppable" data-num="david">
+ <div class="droppable one" data-num="david">
   <p>This person has traveled to Russia!</p>
 </div>
 
- <div class="droppable" data-num="lisa">
-
-  <p>This person is terrified of frogs and toads.</p>
+<div class="draggable three" data-num="david">
+  <p>Condiments</p>
 </div>
+
+
+
+<div class="droppable three" data-num="lisa-david">
+  <p>This is a movie about two patients at a mental hospital who meet and fall in love.</p>
+</div>
+
+<div class="draggable one" data-num="cheese">
+  <p>What Lisa's older sister calls her</p>
+</div>
+<div class="droppable two" data-num="nels">
+  <p>Nels Cline</p>
+</div>
+
+
+<div class="droppable three" data-num="cheese">
+  <p>Cheese.</p>
+</div>
+
+
+
+<div class="draggable two" data-num="dave">
+
+  <p>Dave</p>
+</div>
+
+<div class="droppable two" data-num="toe">
+  <p>Lisa is permanently missing a bodypart. What is it?</p>
+</div>
+
+
+
+<div class="draggable one" data-num="dave">
+  <p>Out of the two, this person has far better eyesight.</p>
+</div>
+
+
+
+<div class="draggable two" data-num="nels">
+  <p>Dave has shaken hands with this guitarist, who also happens to be one of his musical heroes.</p>
+</div>
+
+
+
+
 
 
 <!--end-->

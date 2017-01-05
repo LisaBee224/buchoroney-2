@@ -2,8 +2,49 @@
   Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
   CSS from:       http://codepen.io/transportedman/pen/NPWRGq
   and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
-  Inspired from:  http://codepen.io/Rowno/pen/Afykb 
+  Inspired from:  http://codepen.io/Rowno/pen/Afykb
 */
+.address-map{
+  height:300px;
+  width:80%;
+  display:block;
+  margin:25px auto;
+}
+.reg{
+  max-width:60%;
+  display:block;
+  margin:0 auto;
+}
+.homenav{
+  border:none;
+  font-size:1.2em;
+
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #509386;
+}
+.navbar-default .navbar-nav > li > a:hover{
+  color: #8fc1e8;
+}
+.nav-det li{
+  font-family: 'Quicksand', sans-serif;
+  text-align:center;
+}
+.address{
+  padding:20px;
+  text-align:center;
+  display:block;
+  margin:0 auto;
+}
+h1{
+  font-size:1.75em;
+  font-family: 'Quicksand', sans-serif;
+}
+h3{
+  font-size:1.5em;
+  font-family: 'Quicksand', sans-serif;
+}
 .carousel-fade .carousel-inner .item {
   opacity: 0;
   transition-property: opacity;
@@ -71,5 +112,91 @@
   opacity: 1; }
 .navbar-toggle.collapsed .bottom-bar {
   transform: rotate(0); }
+#cam{
+  position:relative;
+}
+.cam-img {
+  position:absolute; display:none; z-index:99; margin-left:250px;}
+#cam:hover .cam-img{
+  display:block;
+}
 
+#point{
+  position:relative;
+}
+.point-img{
+  position:absolute; display:none; z-index:99; margin-left:250px;
+}
+#point:hover .point-img{
+  display:block;
+}
+.container{
+  width:85%;
+  padding:15px;
+  margin:0 auto;
+
+}
+  p{
+    font-family: 'Quattrocento', serif;
+    font-size:1.25em;
+  }
+
+.thumbnail {margin-bottom:6px;}
+
+.carousel-control.left,.carousel-control.right{
+  background-image:none;
+  margin-top:10%;
+  width:5%;
+}
+
+/*.dek{
+  width:40%;
+  height:200px;
+  float:left;
+  padding:50px;
+}*/
+
+.activity{
+  margin:1em auto;
+
+}
+.activity .dek{
+  margin-top:3em;
+}
+
+.activity-non{
+  margin:2em auto;
+}
+
+.draggable{
+  width:200px;
+  height:150px;
+  padding:10px;
+  text-align:center;
+  border:1px solid #6aa5cc;
+  background-color:#8fc1e8;
+  float:right;
+}
+
+.droppable{
+  width:200px;
+  height:175px;
+  padding:30px;
+  border: 1px solid #d37d81;
+  text-align:center;
+  background-color:#f69c9d;
+  float:left;
+}
+
+.one{
+  margin:20px;
+}
+
+.two{
+  margin:5px;
+}
+
+.three{
+  margin:35px;
+}
 /*# sourceMappingURL=styles.css.map */

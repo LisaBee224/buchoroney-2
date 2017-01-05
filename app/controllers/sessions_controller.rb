@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if @guest
       @party = @guest.party
       session[:guest_id] = @guest.id
-      redirect_to '/parties/edit'
+      redirect_to "/parties/#{@party.id}/edit"
     else
       render :'new'
     end
@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
       redirect_to '/login'
     end
   end
+
 
   def destroy
     session[:guest_id] = nil

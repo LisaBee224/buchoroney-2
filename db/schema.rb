@@ -17,14 +17,15 @@ ActiveRecord::Schema.define(version: 20160907204422) do
   enable_extension "plpgsql"
 
   create_table "guests", force: :cascade do |t|
-    t.string   "first_name", null: false
-    t.string   "last_name",  null: false
-    t.string   "email",      null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
     t.integer  "party_id"
     t.integer  "meal_id"
     t.boolean  "attending"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "rehearsal_att"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "guests", ["meal_id"], name: "index_guests_on_meal_id", using: :btree
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160907204422) do
   create_table "parties", force: :cascade do |t|
     t.string   "party_name"
     t.integer  "guest_id_id"
+    t.boolean  "rehearsal"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

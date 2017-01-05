@@ -1,12 +1,13 @@
 class CreateGuests < ActiveRecord::Migration
   def change
     create_table :guests do |t|
-      t.string :first_name, null: false
-      t.string :last_name, null: false
-      t.string :email, null: false
+      t.string :first_name
+      t.string :last_name
+      t.string :email
       t.references :party, index: true
       t.references :meal, index: true
       t.boolean :attending
+       t.boolean :rehearsal_att
       t.timestamps null: false
     end
   end

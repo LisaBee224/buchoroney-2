@@ -3,6 +3,7 @@ class CreateParties < ActiveRecord::Migration
     create_table :parties do |t|
       t.string :party_name
       t.references :guest_id
+      t.boolean :rehearsal
       t.timestamps null: false
     end
   end

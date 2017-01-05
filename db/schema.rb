@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(version: 20160907204422) do
     t.integer  "party_id"
     t.integer  "meal_id"
     t.boolean  "attending"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "rehearsal_att"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "guests", ["meal_id"], name: "index_guests_on_meal_id", using: :btree
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160907204422) do
   create_table "parties", force: :cascade do |t|
     t.string   "party_name"
     t.integer  "guest_id_id"
+    t.boolean  "rehearsal"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

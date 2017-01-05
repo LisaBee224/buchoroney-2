@@ -1,0 +1,14 @@
+a:hover {
+  background-color: transparent !important; }
+
+.homenav {
+  background-color: transparent !important;
+  text-align: right; }
+
+.homenav a {
+  color: #333; }
+
+.nav-det {
+  float: right !important; }
+
+/*# sourceMappingURL=layouts.css.map */

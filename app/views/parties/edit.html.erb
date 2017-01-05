@@ -12,7 +12,12 @@
             <%= guests_form.label :attending, "yes!", :value => true %>
             <%= guests_form.radio_button :attending, false, :checked => false %>
             <%= guests_form.label :attending, "no", :value => false %>
-
+         <% if @party.rehearsal %>
+            <%= guests_form.label :rehearsal, "yes", :value=>true%>
+             <%= guests_form.radio_button :rehearsal, true, :checked => true %>
+            <%= guests_form.label :rehearsal, "no", :value=>false %>
+            <%= guests_form.radio_button :rehearsal, false, :checked => false %>
+            <%end%>
             <%=guests_form.label :meal_id, "meal choice" %>
             <%=guests_form.radio_button :meal_id, :checked => 1 %>
             <%= guests_form.label :meal_id, "chicken", :value => 1 %>

@@ -7,6 +7,7 @@ class CreateGuests < ActiveRecord::Migration
       t.references :party, index: true
       t.references :meal, index: true
       t.boolean :attending
+       t.boolean :rehearsal_att
       t.timestamps null: false
     end
   end

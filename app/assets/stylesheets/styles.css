@@ -20,7 +20,15 @@
   font-size:1.2em;
 
 }
-
+.bio{
+  margin-bottom:6em;
+}
+.bio-p{
+  padding-top:2em;
+}
+.img-bg{
+  float:right;
+}
 .navbar-default .navbar-nav > li > a{
   color: #509386;
 }
@@ -167,11 +175,14 @@ h3{
 .activity-non{
   margin:2em auto;
 }
-
+#myCarousel{
+  margin-top:2em;
+}
 .draggable{
+  font-size:.875em;
   width:200px;
   height:150px;
-  padding:10px;
+  padding:15px 30px;
   text-align:center;
   border:1px solid #6aa5cc;
   background-color:#8fc1e8;
@@ -179,9 +190,10 @@ h3{
 }
 
 .droppable{
+  font-size:.875em;
   width:200px;
   height:175px;
-  padding:30px;
+  padding:15px 30px;
   border: 1px solid #d37d81;
   text-align:center;
   background-color:#f69c9d;

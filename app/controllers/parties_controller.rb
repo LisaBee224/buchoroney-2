@@ -46,4 +46,3 @@ class PartiesController < ApplicationController
         params.require(:party).permit([:id, :party_name, :guest_id, :rehearsal, guests: [:id, :first_name, :last_name, :email, :meal_id, :rehearsal_att, :party_id, :attending] ]) #list all the attributes that you want to allow to be passed from the       view  to the model when in the controller
     end
 end
-

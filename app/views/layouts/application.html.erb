@@ -9,7 +9,9 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
    <script src="https://use.fontawesome.com/ab1ae4c50b.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.0.0/ekko-lightbox.css"></script>
    <link href="https://fonts.googleapis.com/css?family=Quattrocento|Quicksand" rel="stylesheet">
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -23,7 +25,7 @@
             <span class="icon-bar middle-bar"></span>
             <span class="icon-bar bottom-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">home</a>
+          <a class="navbar-brand" href="/"><%= image_tag "hero.png" %></a>
          </div><!--navbar-header-->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav nav-det">

@@ -4,6 +4,10 @@
   and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
   Inspired from:  http://codepen.io/Rowno/pen/Afykb
 */
+body.modal-open{
+ overflow: hidden;
+    position: absolute;
+}
 .navbar-nav > li{
   float:none !important;
 }

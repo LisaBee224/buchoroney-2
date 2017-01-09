@@ -2,40 +2,61 @@
 <!doctype html>
 <head>
 <script>
-$(document).ready(function() {
+$(document).ready(function(){
 
-   /* activate the carousel */
-   $("#modal-carousel").carousel({interval:false});
+    loadGallery(true, 'a.thumbnail');
 
-   /* change modal title when slide changes */
-   $("#modal-carousel").on("slid.bs.carousel",       function () {
-        $(".modal-title")
-        .html($(this)
-        .find(".active img")
-        .attr("title"));
-   });
+    //This function disables buttons when needed
+    function disableButtons(counter_max, counter_current){
+        $('#show-previous-image, #show-next-image').show();
+        if(counter_max == counter_current){
+            $('#show-next-image').hide();
+        } else if (counter_current == 1){
+            $('#show-previous-image').hide();
+        }
+    }
 
-   /* when clicking a thumbnail */
-   $(".row .thumbnail").click(function(){
-    var content = $(".carousel-inner");
-    var title = $(".modal-title");
+    /**
+     *
+     * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
+     * @param setClickAttr  Sets the attribute for the click handler.
+     */
 
-    content.empty();
-    title.empty();
+    function loadGallery(setIDs, setClickAttr){
+        var current_image,
+            selector,
+            counter = 0;
 
-    var id = this.id;
-     var repo = $("#img-repo .item");
-     var repoCopy = repo.filter("#" + id).clone();
-     var active = repoCopy.first();
+        $('#show-next-image, #show-previous-image').click(function(){
+            if($(this).attr('id') == 'show-previous-image'){
+                current_image--;
+            } else {
+                current_image++;
+            }
 
-    active.addClass("active");
-    title.html(active.find("img").attr("title"));
-    content.append(repoCopy);
+            selector = $('[data-image-id="' + current_image + '"]');
+            updateGallery(selector);
+        });
 
-    // show the modal
-    $("#modal-gallery").modal("show");
-  });
+        function updateGallery(selector) {
+            var $sel = selector;
+            current_image = $sel.data('image-id');
+            $('#image-gallery-caption').text($sel.data('caption'));
+            $('#image-gallery-title').text($sel.data('title'));
+            $('#image-gallery-image').attr('src', $sel.data('image'));
+            disableButtons(counter, $sel.data('image-id'));
+        }
 
+        if(setIDs == true){
+            $('[data-image-id]').each(function(){
+                counter++;
+                $(this).attr('data-image-id',counter);
+            });
+        }
+        $(setClickAttr).on('click',function(){
+            updateGallery($(this));
+        });
+    }
 });
 </script>
 </head>
@@ -67,13 +88,13 @@ The Bristol Center got its power back in time for WHCL’s weekly meetings, so L
 
   <b>Doesn’t love: </b> beets, touching seaweed, frogs.
   <p></p>
-  <b>Future title of autobiography: </b>A string of very baffling concepts.
+  <b>Future title of autobiography: </b>Have you console logged it?
   <p></p>
-  <b>Has visited: </b>Malta
+  <b>Has visited: </b> Malta
   <p></p>
-  <b>Has not visited: </b>Alaska
+  <b>Has not visited: </b> Alaska
   <p></p>
-  <b>Favorite Neil Young Song: </b>Tell Me Why
+  <b>Favorite Neil Young Song: </b> Tell Me Why
   </p>
 </div>
 </div>
@@ -90,13 +111,13 @@ Dave grew up in the wild west of San Diego, California, going to cowboy camp and
 <p></p>
 <b>Doesn’t love:</b> Little Dragon, yogurt, condiments.
 <p></p>
-<b>Future title of autobiography:</b>Photosynthesize: How to play nurturing music for your plants.
+<b>Future title of autobiography:</b>Photosynthesizers: How to play nurturing music for your plants.
 <p></p>
 <b>Has visited:</b>Estonia
 <p></p>
 <b>Has not visited:</b>Spain
 <p></p>
-<b>Favorite Neil Young Song: </b>Harvest Moon
+<b>Favorite Neil Young Song: </b>Out on the Weekend
 
 </p>
 </div>
@@ -108,206 +129,142 @@ Dave grew up in the wild west of San Diego, California, going to cowboy camp and
 
 <div class="container">
   <div class="row">
+<div class="col-lg-12">
 
-    <div class="row">
 
-            <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 1" href="#">
-            <%=image_tag "lisadave1", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
-        </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/3063889f30.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave1.jpg", :class=>"img-responsive" %>
 
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 2" href="#">
-            <%=image_tag "dave_lisa_038", :class=>'thumbnail img-responsive', :id=>"image-2"%>
-          </a>
-
+            </a>
         </div>
-          <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "dave_lisa_153", :class=>'thumbnail img-responsive', :id=>"image-3"%>
-          </a>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/307070d330.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave2.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave6", :class=>'thumbnail img-responsive', :id=>"image-4"%>
-          </a>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/30708e72f4.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave3.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "dave_lisa_009", :class=>'thumbnail img-responsive', :id=>"image-5"%>
-          </a>
+          <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"data-image="https://i.imgsafe.org/3070a49d67.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave4.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-
-         <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "dave_lisa_153", :class=>'thumbnail img-responsive', :id=>"image-6"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/3070b84946.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave5.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-
-          <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave7", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/3070c52911.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave6.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-          <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave9", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/3070d39717.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave7.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "dave_lisa_056", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/3070e7c1f7.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave8.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-         <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "dave_lisa_033", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/30710bdd68.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave9.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-           <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave10", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/3071215757.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave10.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave11", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/3071361aef.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave11.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "dave_lisa_027", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/307143d27a.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave12.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave13", :class=>'thumbnail img-responsive', :id=>"image-11"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/307159dccc.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave13.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave12", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/309f686172.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave14.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-         <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave5", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/309f6d9490.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave15.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave4", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/309f7c35b7.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave16.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave3", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/309f907689.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave18.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-        <div class="col-12 col-md-4 col-sm-6">
-          <a title="Image 3" href="#">
-            <%=image_tag "lisadave2", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-          </a>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/309f967470.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave19.jpg", :class=>"img-responsive" %>
+            </a>
         </div>
-    </div>
-
-    <hr>
-
-  </div>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/309fa63607.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave20.jpg", :class=>"img-responsive" %>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/309fbb7a15.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave21.jpg", :class=>"img-responsive" %>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-image="https://i.imgsafe.org/309fd675c1.jpg" data-target="#image-gallery">
+                <%=image_tag "lisadave22.jpg", :class=>"img-responsive" %>
+            </a>
+        </div>
 </div>
 
-  <div class="hidden" id="img-repo">
 
-    <!-- #image-1 -->
-    <div class="item" id="image-1">
-      <%=image_tag "lisadave1", :class=>'thumbnail img-responsive', :id=>"image-1"%>
-    </div>
-    <div class="item" id="image-2">
-     <%=image_tag "dave_lisa_038", :class=>'thumbnail img-responsive', :id=>"image-2"%>
-    </div>
-    <div class="item" id="image-3">
-      <%=image_tag "dave_lisa_153", :class=>'thumbnail img-responsive', :id=>"image-3"%>
-    </div>
-
-    <!-- #image-2 -->
-    <div class="item" id="image-1">
-      <%=image_tag "lisadave6", :class=>'thumbnail img-responsive', :id=>"image-4"%>
-    </div>
-    <div class="item" id="image-1">
-      <%=image_tag "dave_lisa_009", :class=>'thumbnail img-responsive', :id=>"image-5"%>
-    </div>
-    <div class="item" id="image-1">
-     <%=image_tag "dave_lisa_153", :class=>'thumbnail img-responsive', :id=>"image-6"%>
-    </div>
-    <div class="item" id="image-1">
-     <%=image_tag "lisadave7", :class=>'thumbnail img-responsive', :id=>"image-7"%>
-    </div>
-    <div class="item" id="image-1">
-     <%=image_tag "lisadave9", :class=>'thumbnail img-responsive', :id=>"image-8"%>
-    </div>
-     <div class="item" id="image-1">
-     <%=image_tag "dave_lisa_056", :class=>'thumbnail img-responsive', :id=>"image-9"%>
-    </div>
-     <div class="item" id="image-1">
-     <%=image_tag "dave_lisa_033", :class=>'thumbnail img-responsive', :id=>"image-10"%>
-    </div>
-     <div class="item" id="image-1">
-     <%=image_tag "lisadave10", :class=>'thumbnail img-responsive', :id=>"image-11"%>
-    </div>
-      <div class="item" id="image-1">
-     <%=image_tag "lisadave11", :class=>'thumbnail img-responsive', :id=>"image-12"%>
-    </div>
-     <div class="item" id="image-1">
-     <%=image_tag "dave_lisa_027", :class=>'thumbnail img-responsive', :id=>"image-13"%>
-    </div>
-     <div class="item" id="image-1">
-     <%=image_tag "lisadave13", :class=>'thumbnail img-responsive', :id=>"image-14"%>
-    </div>
-     <div class="item" id="image-1">
-     <%=image_tag "lisadave12", :class=>'thumbnail img-responsive', :id=>"image-15"%>
-    </div>
-
-    <!-- #image-3-->
-    <div class="item" id="image-1">
-     <%=image_tag "lisadave5", :class=>'thumbnail img-responsive', :id=>"image-16"%>
-    </div>
-    <div class="item" id="image-1">
-      <%=image_tag "lisadave4", :class=>'thumbnail img-responsive', :id=>"image-17"%>
-    </div>
-    <div class="item" id="image-1">
-      <%=image_tag "lisadave3", :class=>'thumbnail img-responsive', :id=>"image-18"%>
-    </div>
-      <div class="item" id="image-1">
-      <%=image_tag "lisadave2", :class=>'thumbnail img-responsive', :id=>"image-19"%>
-    </div>
-
-  </div>
-
-<div class="modal" id="modal-gallery" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-          <button class="close" type="button" data-dismiss="modal">×</button>
-          <h3 class="modal-title"></h3>
-      </div>
-      <div class="modal-body">
-          <div id="modal-carousel" class="carousel">
-
-            <div class="carousel-inner">
+<div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="image-gallery-title"></h4>
             </div>
+            <div class="modal-body">
+                <img id="image-gallery-image" class="img-responsive" src="">
+            </div>
+            <div class="modal-footer">
 
-            <a class="carousel-control left" href="#modal-carousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-            <a class="carousel-control right" href="#modal-carousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
+                </div>
 
-          </div>
-      </div>
-      <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+
+
+                <div class="col-md-2">
+                    <button type="button" id="show-next-image" class="btn btn-default">Next</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 

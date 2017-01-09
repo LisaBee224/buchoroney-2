@@ -13,8 +13,20 @@
    <link href="https://fonts.googleapis.com/css?family=Satisfy|Quattrocento|Quicksand" rel="stylesheet">
 
   <%= csrf_meta_tags %>
+ <script>
+        $(document).on('click', 'a', function(){
+          console.log("yo");
+           $('.nav li').removeClass();
+           $($(this).attr('href')).addClass('active');
+
+     });
+
+        window.addEventListener("beforeunload", function () {
+  document.body.classList.add("animate-out");
+});
+  </script>
 </head>
-<body>
+<body class="animate-in">
 
     <nav class="navbar navbar-default homenav">
     <div class="container-fluid">
@@ -29,11 +41,11 @@
          </div><!--navbar-header-->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav nav-det">
-           <a class="navbar-brand" href="/">home</a>
+           <li><%=link_to '<i class="fa fa-home" aria-hidden="true"></i><br>home'.html_safe, root_path%></a>
            <li><%= link_to '<i class="fa fa-paper-plane-o" aria-hidden="true"></i><br>go'.html_safe, page_path('location') %></li>
            <li><%=link_to '<i class="fa fa-bed" aria-hidden="true"></i><br>stay'.html_safe, page_path('hotels') %></li>
            <li><%= link_to '
-<i class="fa fa-clone" aria-hidden="true"></i><br>play'.html_safe, page_path('game') %></li>
+<i class="fa fa-clone" aria-hidden="true"></i><br>play'.html_safe, page_path('game'), {:class=>"thing"} %></li>
 <li><%= link_to '<i class="fa fa-heart-o" aria-hidden="true"></i><br>the big day'.html_safe, page_path('info') %></li>
           <li><%= link_to '<i class="fa fa-hand-peace-o" aria-hidden="true"></i><br>Davey/Leesy'.html_safe, page_path('about') %></li>
           <li><%= link_to '<i class="fa fa-gift" aria-hidden="true"></i><br>registry'.html_safe, page_path('registry') %></li>

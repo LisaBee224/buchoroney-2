@@ -29,6 +29,7 @@
 }
 .bio-p{
   padding-top:2em;
+  border-top:1px solid #e5a0d6 ;
 }
 .img-bg{
   float:right;
@@ -44,18 +45,21 @@
   text-align:center;
 }
 .address{
-  padding:20px;
+
   text-align:center;
   display:block;
   margin:0 auto;
+  padding:20px;
 }
 h1{
   font-size:1.75em;
   font-family: 'Quicksand', sans-serif;
+  color:#e5a0d6;
 }
 h3{
   font-size:1.5em;
   font-family: 'Quicksand', sans-serif;
+  color:#90dbd5;
 }
 .carousel-fade .carousel-inner .item {
   opacity: 0;
@@ -124,6 +128,27 @@ h3{
   opacity: 1; }
 .navbar-toggle.collapsed .bottom-bar {
   transform: rotate(0); }
+
+  .animate-in {
+    -webkit-animation: fadeIn .5s ease-in;
+    animation: fadeIn .5s ease-in;
+}
+
+.animate-out {
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 #cam{
   position:relative;
 }
@@ -143,14 +168,23 @@ h3{
   display:block;
 }
 .container{
-  width:85%;
+  width:75%;
   padding:15px;
   margin:0 auto;
 
 }
+
+.container-sub{
+  margin-top:4em;
+  margin-bottom:4em;
+  padding:4em 0;
+  border-top:1px solid #75efa6 ;
+  border-bottom:1px solid #75efa6 ;
+}
   p{
     font-family: 'Quattrocento', serif;
     font-size:1.25em;
+    color:#333;
   }
 
 .thumbnail {margin-bottom:6px;}
@@ -173,7 +207,8 @@ h3{
 
 }
 .activity .dek{
-  margin-top:3em;
+  margin-top:4em;
+  margin-bottom:4em;
 }
 
 .activity-non{
@@ -209,7 +244,7 @@ h3{
   text-align:center;
   border:1px solid #6aa5cc;
   background-color:#8fc1e8;
-  float:right;
+  margin:2em;
 }
 
 .droppable{
@@ -220,7 +255,8 @@ h3{
   border: 1px solid #d37d81;
   text-align:center;
   background-color:#f69c9d;
-  float:left;
+  margin:2em;
+
 }
 
 .one{

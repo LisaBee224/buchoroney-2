@@ -68,6 +68,19 @@ padding:1em;
   float:right;
 
 }
+.masonry{
+  margin-top:-160px;
+}
+.options{
+  padding-left:0;
+}
+.options li{
+  font-size:1.25em;
+  list-style:none;
+}
+.options li i{
+  color:#ff7043;;
+}
 .bio{
   margin-bottom:6em;
 }
@@ -88,6 +101,9 @@ padding:1em;
   font-family: 'Quicksand', sans-serif;
   text-align:center;
 }
+a{
+  color:#ff7043;
+}
 .address{
 
   text-align:center;
@@ -99,11 +115,17 @@ h1{
   font-size:1.75em;
   font-family: 'Quicksand', sans-serif;
   color:#e5a0d6;
+  text-align:center;
 }
 h3{
   font-size:1.5em;
   font-family: 'Quicksand', sans-serif;
   color:#90dbd5;
+  text-align:center;
+}
+h4, .emph, .emph i{
+  color:#8bc34a;
+  font-weight:bold;
 }
 .carousel-fade .carousel-inner .item {
   opacity: 0;
@@ -312,15 +334,25 @@ h3{
 
 }
 
-.one{
-  margin:20px;
+.first a{
+  color:#009688;
 }
-
-.two{
-  margin:5px;
+.second a {
+  color:#4caf50;
 }
-
-.three{
-  margin:35px;
+.third a{
+  color:#8bc34a;
+}
+.fourth{
+  color:#ffc107;
+}
+.fifth{
+color:#ff9800;
+}
+.sixth{
+  color:#ff7043;
+}
+.seventh{
+  color:#d17287;
 }
 /*# sourceMappingURL=styles.css.map */

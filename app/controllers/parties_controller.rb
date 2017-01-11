@@ -12,15 +12,15 @@ class PartiesController < ApplicationController
 
   end
 
-  def update
-    @party = Party.find_by(id: params[:id])
-    @guests = @party.guests
-    count = 0
-    @guests.each do |guest|
-      guest.update(meal_id: params["party"]["guests_attributes"].flatten[count]["meal_id"][-2].to_i)
-         # binding.pry
-      count+=1
-    end
+  # def update
+  #   @party = Party.find_by(id: params[:id])
+  #   @guests = @party.guests
+  #   count = 0
+  #   @guests.each do |guest|
+  #     guest.update(meal_id: params["party"]["guests_attributes"].flatten[count]["meal_id"][-2].to_i)
+  #        # binding.pry
+  #     count+=1
+  #   end
 
     binding.pry
 

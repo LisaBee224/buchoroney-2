@@ -36,14 +36,14 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav nav-det">
           <li class="tag">6/16/2018<br>Groton, MA</li>
-           <li class="<%= active_class(root_path) %>"><%=link_to '<i class="fa fa-home" aria-hidden="true"></i><br>home'.html_safe, root_path%></a>
-           <li class="<%= active_class(static_pages_locations_path) %>"><%= link_to '<i class="fa fa-paper-plane-o" aria-hidden="true"></i><br>go'.html_safe, page_path('location') %></li>
-           <li><%=link_to '<i class="fa fa-bed" aria-hidden="true"></i><br>stay'.html_safe, page_path('hotels') %></li>
-           <li><%= link_to '
+           <li class="first"><%=link_to '<i class="fa fa-home" aria-hidden="true"></i><br>home'.html_safe, root_path%></a>
+           <li class="second"><%= link_to '<i class="fa fa-paper-plane-o" aria-hidden="true"></i><br>go'.html_safe, page_path('location') %></li>
+           <li class="third"><%=link_to '<i class="fa fa-bed" aria-hidden="true"></i><br>stay'.html_safe, page_path('hotels') %></li>
+           <li class="fourth"><%= link_to '
 <i class="fa fa-clone" aria-hidden="true"></i><br>play'.html_safe, page_path('game'), {:class=>"thing"} %></li>
-<li><%= link_to '<i class="fa fa-heart-o" aria-hidden="true"></i><br>the big day'.html_safe, page_path('info') %></li>
-          <li><%= link_to '<i class="fa fa-hand-peace-o" aria-hidden="true"></i><br>Davey/Leesy'.html_safe, page_path('about') %></li>
-          <li><%= link_to '<i class="fa fa-gift" aria-hidden="true"></i><br>registry'.html_safe, page_path('registry') %></li>
+<li class="fifth"><%= link_to '<i class="fa fa-heart-o" aria-hidden="true"></i><br>the big day'.html_safe, page_path('info') %></li>
+          <li class="sixth"><%= link_to '<i class="fa fa-hand-peace-o" aria-hidden="true"></i><br>Davey/Leesy'.html_safe, page_path('about') %></li>
+          <li class="seventh"><%= link_to '<i class="fa fa-gift" aria-hidden="true"></i><br>registry'.html_safe, page_path('registry') %></li>
           <li><%= link_to  '<i class="fa fa-envelope-o" aria-hidden="true"></i><br>rsvp'.html_safe, '/login' %></li>
 
         </ul>

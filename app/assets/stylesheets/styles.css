@@ -8,6 +8,9 @@ body.modal-open{
  overflow: hidden;
     position: absolute;
 }
+p{
+  line-height:1.6;
+}
 .tag{
   background-color:#C985BB;
   color:white;
@@ -376,7 +379,7 @@ color:#ffc107;
 }
 
 .sixth-active{
-  color:#feefd8;
+  background-color:#feefd8;
 }
 .navbar-default .navbar-nav > li.seventh > a{
   color:#d16f50;
@@ -400,5 +403,20 @@ background-color:#f3dbd3;
 .nav >li{
   display:inline-block;
 }
+}
+
+.btn-primary{
+color:#00bcd4;
+background-color:#d8f4f8;
+}
+.btn-default{
+color:#4caf50;
+  background-color:#e3f2e3;
+}
+
+.shadow{
+  -webkit-box-shadow: 2px 2px 19px 14px rgba(115,235,91,1);
+-moz-box-shadow: 2px 2px 19px 14px rgba(115,235,91,1);
+box-shadow: 2px 2px 19px 14px rgba(115,235,91,1);
 }
 /*# sourceMappingURL=styles.css.map */

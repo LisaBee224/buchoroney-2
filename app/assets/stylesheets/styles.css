@@ -334,25 +334,60 @@ h4, .emph, .emph i{
 
 }
 
-.first a{
+
+.navbar-default .navbar-nav > li.first > a{
+  color:#00bcd4;
+
+}
+
+.first-active{
+  background-color:#d8f4f8;
+}
+.navbar-default .navbar-nav > li.second > a {
   color:#009688;
 }
-.second a {
+
+.second-active{
+background-color:#d8eeec;
+}
+.navbar-default .navbar-nav > li.third >a{
   color:#4caf50;
 }
-.third a{
+.third-active{
+  background-color:#e3f2e3;
+}
+.navbar-default .navbar-nav > li.fourth > a{
   color:#8bc34a;
 }
-.fourth{
-  color:#ffc107;
+.fourth-active{
+  background-color:#e7f3db;
 }
-.fifth{
-color:#ff9800;
+.navbar-default .navbar-nav > li.fifth > a{
+color:#ffc107;
 }
-.sixth{
+
+.fifth-active{
+  background-color:#fef5d8;
+}
+.navbar-default .navbar-nav > li.sixth > a{
   color:#ff7043;
 }
-.seventh{
-  color:#d17287;
+
+.sixth-active{
+  color:#feefd8;
+}
+.navbar-default .navbar-nav > li.seventh > a{
+  color:#d16f50;
+}
+.seventh-active{
+background-color:#f3dbd3;
+}
+.navbar-default .navbar-nav > li.eight > a{
+color:#d16f50;
+
+}
+
+.eighth-active{
+background-color:#f3dbd3;
 }
 /*# sourceMappingURL=styles.css.map */

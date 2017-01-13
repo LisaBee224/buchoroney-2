@@ -231,6 +231,16 @@ h4, .emph, .emph i{
 #cam:hover .cam-img{
   display:block;
 }
+#snowfort{
+position:relative;
+}
+.snowfort-img{
+  position:absolute; display:none; z-index:99; margin-left:180px;
+}
+#snowfort:hover .snowfort-img{
+  display:block;
+}
+
 
 #point{
   position:relative;
@@ -322,20 +332,39 @@ h4, .emph, .emph i{
   height:150px;
   padding:15px 30px;
   text-align:center;
-  border:1px solid #6aa5cc;
-  background-color:#8fc1e8;
+  background-color:#84d9ee;
   margin:2em;
+  display:table;
+  font-family: 'Quicksand';
+  border-radius:8px;
+  transition:background-color 0.5s ease;
 }
+.draggable:hover{
+  cursor:pointer;
+  background-color:#afdcff;
+}
+.draggable p{
+    display: table-cell;
+    vertical-align: middle;
 
+}
+.droppable p{
+    display: table-cell;
+    vertical-align: middle;
+
+}
 .droppable{
   font-size:.875em;
   width:200px;
   height:175px;
   padding:15px 30px;
-  border: 1px solid #d37d81;
   text-align:center;
   background-color:#f69c9d;
+  border-radius:8px;
   margin:2em;
+  display:table;
+  font-family: 'Quicksand';
+
 
 }
 
@@ -415,8 +444,8 @@ color:#4caf50;
 }
 
 .shadow{
-  -webkit-box-shadow: 2px 2px 19px 14px rgba(115,235,91,1);
--moz-box-shadow: 2px 2px 19px 14px rgba(115,235,91,1);
-box-shadow: 2px 2px 19px 14px rgba(115,235,91,1);
+  -webkit-box-shadow: 2px 2px 19px 14px rgba(120, 228, 33, 1);
+-moz-box-shadow: 2px 2px 19px 14px rgba(120, 228, 33, 1);
+box-shadow: 2px 2px 19px 14px rgba(120, 228, 33, 1);
 }
 /*# sourceMappingURL=styles.css.map */

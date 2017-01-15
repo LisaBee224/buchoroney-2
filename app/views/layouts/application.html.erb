@@ -11,7 +11,7 @@
    <script src="https://use.fontawesome.com/ab1ae4c50b.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.0.0/ekko-lightbox.css"></script>
    <link href="https://fonts.googleapis.com/css?family=Satisfy|Quattrocento|Quicksand" rel="stylesheet">
-
+   <meta name="viewport" content="width=device-width" />
   <%= csrf_meta_tags %>
  <script>
 
@@ -35,7 +35,7 @@
          </div><!--navbar-header-->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav nav-det">
-          <li class="tag">6/16/2018<br>Groton, MA</li>
+          <li class="tag">6.16.2018<br>Groton, MA</li>
            <li class="first <%=' first-active' if current_page?('/')%>"><%=link_to '<i class="fa fa-home" aria-hidden="true"></i><br>home'.html_safe, root_path%></a>
            <li class="second <%='second-active' if current_page?('/pages/location')%>"><%= link_to '<i class="fa fa-paper-plane-o" aria-hidden="true"></i><br>go'.html_safe, page_path('location') %></li>
            <li class="third <%='third-active' if current_page?('/pages/hotels')%>"><%=link_to '<i class="fa fa-bed" aria-hidden="true"></i><br>stay'.html_safe, page_path('hotels') %></li>

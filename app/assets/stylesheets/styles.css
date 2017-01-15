@@ -208,11 +208,7 @@ h4, .emph, .emph i{
     transition: opacity .5s;
     opacity: 0;
 }
-@media screen and (min-width:700px){
-#bs-example-navbar-collapse-1{
-  width:12px;
-}
-}
+
 
 @-webkit-keyframes fadeIn {
     from { opacity: 0; }
@@ -432,8 +428,11 @@ color:#d16f50;
 background-color:#f3dbd3;
 }
 
-@media screen and (max-width:691px){
-.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+/*@media screen and (max-width:700px){
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+  width:100%;
+}
+.navbar-collapse.collapse.in{
   width:100%;
 }
 .nav-det > li{
@@ -445,6 +444,9 @@ background-color:#f3dbd3;
 .tag{
   padding:5px;
 }
+}*/
+.map{
+  max-width:98% !important;
 }
 
 .btn-primary{
@@ -461,4 +463,8 @@ color:#4caf50;
 -moz-box-shadow: 2px 2px 19px 14px rgba(120, 228, 33, 1);
 box-shadow: 2px 2px 19px 14px rgba(120, 228, 33, 1);
 }
+.map{
+  max-width:89% !important;
+}
+
 /*# sourceMappingURL=styles.css.map */

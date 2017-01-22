@@ -1,0 +1,14 @@
+<div class="panel panel-default panel-body">
+  <h3>Meal Choice</h3>
+
+  <%= f.hidden_field :meal => :meal_id, value: guest.meal.try(:id) %>
+  <%= f.label :meal => :desc, "chicken" %>
+  <%= f.radio_button :meal => :desc, :value => "chicken" %>
+
+  <%= f.label :desc, "veggie" %>
+  <%= f.radio_button :desc, :value => "veggie" %>
+
+  <%= f.label :desc, "pasta" %>
+  <%= f.radio_button  :desc, :value => "pasta" %>
+
+</div>

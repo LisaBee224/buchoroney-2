@@ -1,35 +1,32 @@
 <h1>Hey there, <%= current_user.first_name%>! </h1>
-
+  <% if @party.guests.length > 1 %>
     <h2>people in your party:</h2>
 
-    <%= form_for @party do |f| %>
+    <!-- <%=form_for @party, :url => { :action => "update", :controller=>"parties"}, :method=>"patch" do |f|%> -->
+      <% @party.guests.each do |guest| %>
+        <%= guest.first_name %>
+        <%= form_for :guest, :url => { :action => "update", :controller=>"guests"}, :method=>"patch" do |f| %>
+          <div class="panel panel-default panel-body">
+            <h3>Attenting?</h3>
 
-      <%= f.hidden_field :party_id, value: current_party.id %>
+            <%= f.label :attending, "yes!" %>
+            <%= f.radio_button :attending, true %>
 
-      <%= f.fields_for :guests do |guests_form| %>
+            <%= f.label :attending, "no" %>
+            <%= f.radio_button :attending, false %>
+          </div>
 
-            <%= guests_form.radio_button :attending, true, :checked => true %>
-            <%= guests_form.label :attending, "yes!", :value => true %>
-            <%= guests_form.radio_button :attending, false, :checked => false %>
-            <%= guests_form.label :attending, "no", :value => false %>
-         <% if @party.rehearsal %>
-            <%= guests_form.label :rehearsal, "yes", :value=>true%>
-             <%= guests_form.radio_button :rehearsal, true, :checked => true %>
-            <%= guests_form.label :rehearsal, "no", :value=>false %>
-            <%= guests_form.radio_button :rehearsal, false, :checked => false %>
-            <%end%>
-            <%=guests_form.label :meal_id, "meal choice" %>
-            <%=guests_form.radio_button :meal_id, :checked => 1 %>
-            <%= guests_form.label :meal_id, "chicken", :value => 1 %>
-            <%=guests_form.radio_button :meal_id, :checked => 2 %>
-            <%= guests_form.label :meal_id, "veggie", :value => 2 %>
-            <%=guests_form.radio_button  :meal_id, :checked => 3 %>
-            <%= guests_form.label :meal_id, "pasta", :value => 3 %>
+          <%= f.hidden_field :guest_id, value: guest.id %>
+          <%= f.submit "submit", class: 'btn btn-primary btn-lg' %>
         <%end%>
 
-
- <%= f.submit "submit", class: 'btn btn-primary btn-lg' %>
-
-    <%end%>
+        <!-- form for guest's meal -->
 
 
+
+        <!-- special jQuery button : submit both of these forms -->
+      <%end%>
+
+      <button type="submit" name="Submit" id="<%= @party.id %>-rsvp-submit" class="rsvp-submit">Submit!</button>
+  <!-- <%end%> -->
+<%end %>

@@ -1,4 +1,4 @@
-<h1>Hey there, <%= current_user.first_name%>! </h1>
+<h1>Hey there, <%=@guest%> <%= current_user.first_name%>! </h1>
   <% if @party.guests.length > 1 %>
     <h2>people in your party:</h2>
 
@@ -7,7 +7,7 @@
         <%= guest.first_name %>
         <%= form_for :guest, :url => { :action => "update", :controller=>"guests"}, :method=>"patch" do |f| %>
           <div class="panel panel-default panel-body">
-            <h3>Attenting?</h3>
+            <h3>Attending?</h3>
 
             <%= f.label :attending, "yes!" %>
             <%= f.radio_button :attending, true %>
@@ -21,7 +21,23 @@
         <%end%>
 
         <!-- form for guest's meal -->
+        <%= form_for :meal, :url => { :action => "update", :controller=>"meals"}, :method=>"patch" do |f| %>
+          <div class="panel panel-default panel-body">
+            <h3>Attending?</h3>
 
+            <%= f.label :desc, "ice cream" %>
+            <%= f.radio_button :desc, "ice cream" %>
+
+            <%= f.label :desc, "fish pie" %>
+            <%= f.radio_button :desc, "fish pie" %>
+
+            <%= f.label :desc, "bubblegum" %>
+            <%= f.radio_button :desc, "bubblegum" %>
+          </div>
+
+          <%= f.hidden_field :guest_id, value: guest.id %>
+          <%= f.submit "submit", class: 'btn btn-primary btn-lg' %>
+        <%end%>
 
 
         <!-- special jQuery button : submit both of these forms -->

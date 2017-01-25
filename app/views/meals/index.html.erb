@@ -1,0 +1,5 @@
+<h1>Hey <%= @guest.first_name %> </h1>
+
+<% if @guest.meal %>
+  <h2>You've chosen <%= @meal_desc%></h2>
+<% end %>

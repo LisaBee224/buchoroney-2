@@ -468,7 +468,11 @@ color:#4caf50;
 box-shadow: 2px 2px 19px 14px rgba(120, 228, 33, 1);
 }
 
-
+@media screen and (max-width:900px) and (min-width:461px){
+  .address{
+    width:90%;
+  }
+}
 @media screen and (max-width:460px){
 .nav-det > li{
 position:relative;
@@ -476,4 +480,6 @@ display:inline-block !important;
 
 }
 }
+
+
 /*# sourceMappingURL=styles.css.map */

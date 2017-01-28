@@ -10,6 +10,6 @@ class GuestsController < ApplicationController
     @guest.update_attributes(attending: attending)
 
     # redirect_to "parties/#{guest.party.id}/edit"
-    render "index"
+    render json: {success:true, party_id: @guest.party.id}.to_json
   end
 end

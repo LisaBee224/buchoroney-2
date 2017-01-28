@@ -7,7 +7,7 @@ class MealsController < ApplicationController
     meal = Meal.find_by(desc: params[:meal][:desc])
     @guest.update_attributes(meal: meal)
 
-    render "index"
+    render json: {success:true, party_id: @guest.party.id}.to_json
   end
 
 end

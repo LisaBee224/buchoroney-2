@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
 
   def show
+    @guest ||= Guest.find_by(id: session[:guest_id])
 
   end
 
@@ -12,23 +13,7 @@ class PartiesController < ApplicationController
 
   end
 
-  def update
-    binding.pry
-    @party = Party.find_by(id: params[:id])
-    @guests = @party.guests
-    count = 0
-    @guests.each do |guest|
-      guest.update(meal_id: params["party"]["guests_attributes"].flatten[count]["meal_id"][-2].to_i)
-         binding.pry
-      count+=1
-    end
 
-    binding.pry
-
-    if @party.save
-      redirect_to '/login'
-    end
-  end
 
 
 # def update

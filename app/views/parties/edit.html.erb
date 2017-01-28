@@ -2,10 +2,10 @@
   <% if @party.guests.length > 1 %>
     <h2>people in your party:</h2>
 
-    <!-- <%=form_for @party, :url => { :action => "update", :controller=>"parties"}, :method=>"patch" do |f|%> -->
+
       <% @party.guests.each do |guest| %>
         <%= guest.first_name %>
-        <%= form_for :guest, :url => { :action => "update", :controller=>"guests"}, :method=>"patch" do |f| %>
+        <%= form_for guest, :remote => true, :url => { :action => "update", :controller=>"guests"}, :method=>"patch" do |f| %>
           <div class="panel panel-default panel-body">
             <h3>Attending?</h3>
 
@@ -17,11 +17,11 @@
           </div>
 
           <%= f.hidden_field :guest_id, value: guest.id %>
-          <%= f.submit "submit", class: 'btn btn-primary btn-lg' %>
+
         <%end%>
 
         <!-- form for guest's meal -->
-        <%= form_for :meal, :url => { :action => "update", :controller=>"meals"}, :method=>"patch" do |f| %>
+        <%= form_for guest.meal, :remote => true, :url => { :action => "update", :controller=>"meals"}, :method=>"patch" do |f| %>
           <div class="panel panel-default panel-body">
             <h3>Attending?</h3>
 
@@ -36,7 +36,7 @@
           </div>
 
           <%= f.hidden_field :guest_id, value: guest.id %>
-          <%= f.submit "submit", class: 'btn btn-primary btn-lg' %>
+
         <%end%>
 
 
@@ -44,5 +44,5 @@
       <%end%>
 
       <button type="submit" name="Submit" id="<%= @party.id %>-rsvp-submit" class="rsvp-submit">Submit!</button>
-  <!-- <%end%> -->
+
 <%end %>

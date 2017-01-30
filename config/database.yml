@@ -22,3 +22,5 @@ production:
   database: lisabuch_production
   pool: 5
   timeout: 5000
+
+  env RAILS_ENV=production DATABASE_URL=postgresql://user:pass@127.0.0.1/immense-basin-69611_production bundle exec rake assets:precompile 2>&1

@@ -47,6 +47,11 @@ padding:2em;
   border-radius:8px;
 }
 
+.container-nav{
+  padding-right:5px;
+  padding-left:0;
+}
+
 .transport{
 margin:1em;
 padding:1em;
@@ -210,7 +215,6 @@ h4, .emph, .emph i{
 }
 
 
-
 @-webkit-keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -333,7 +337,7 @@ position:relative;
 .draggable{
   font-size:.875em;
   width:200px;
-  height:150px;
+  height:175px;
   padding:15px 30px;
   text-align:center;
   background-color:#84d9ee;
@@ -372,7 +376,9 @@ position:relative;
 
 }
 
-
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+  padding:0;
+}
 .navbar-default .navbar-nav > li.first > a{
   color:#00bcd4;
 
@@ -428,8 +434,8 @@ color:#d16f50;
 .eighth-active{
 background-color:#f3dbd3;
 }
-/*
-@media screen and (max-width:700px){
+
+/*@media screen and (max-width:700px){
   .navbar-default .navbar-collapse, .navbar-default .navbar-form{
   width:100%;
 }
@@ -447,10 +453,6 @@ background-color:#f3dbd3;
 }
 }*/
 
-.map{
-  max-width:89% !important;
-}
-
 .btn-primary{
 color:#00bcd4;
 background-color:#d8f4f8;
@@ -466,6 +468,89 @@ color:#4caf50;
 box-shadow: 2px 2px 19px 14px rgba(120, 228, 33, 1);
 }
 
+.kimballs{
+  display:block;
+  margin:0 auto;
+}
+
+.move-up{
+  margin-top:-26em;
+}
+
+.movetxt {
+    -webkit-animation: moving 5s infinite;
+    animation: moving 5s infinite;
+}
+@keyframes moving {
+    from {transform: translateY(0px);}
+    to {transform: translateY(-80px);}
+}
+
+.bg-animate{
+ animation: colorchange .85s;
+  -webkit-animation: colorchange .85s;
+}
+ @keyframes colorchange
+    {
+       0%   {background:#ff75e8;}
+      25%  {background: #8ee9f9; }
+      50%{background: #ffc13d;}
+      75%  {background: #cbfc44;}
+      100%{background: #99f78f;}
+    }
+
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+       0%   {background:#ff75e8;}
+      25%  {background: #8ee9f9; }
+      50%{background: #ffc13d;}
+      75%  {background: #cbfc44;}
+
+      100%{background: #99f78f;}
+    }
+
+
+@media screen and (max-width:900px) and (min-width:461px){
+  .address{
+    width:90%;
+  }
+}
+
+@media screen and (max-width:987px){
+  .ld{
+   max-width:95%;
+  }
+}
+@media screen and (max-width:460px){
+.nav-det > li{
+position:relative;
+display:inline-block !important;
+
+}
+}
+@media screen and (max-width:1088px){
+.container-activity{
+width:100%;
+display:block;
+margin:20px auto;
+
+}
+.move-up{
+  margin-top:1em;
+}
+
+
+}
+
+@media screen and (max-width:1226px){
+  .alpacas-p{
+  width:100%;
+}
+.alpaca{
+  display:block;
+  margin:0 auto;
+}
+}
 
 
 /*# sourceMappingURL=styles.css.map */

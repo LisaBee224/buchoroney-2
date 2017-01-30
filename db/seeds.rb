@@ -10,8 +10,8 @@ Party.create(party_name: "Buch")
 Party.create(party_name: "Goodman")
 Party.create(party_name: "Speck")
 
-Guest.create(first_name: "Lisa", last_name: "Buch", email: "lisakbuch@gmail.com", party_id:1)
-Guest.create(first_name:"hey", last_name:"Yo", email: "yo@yo.com", party_id:1)
+Guest.create(first_name: "Lisa", last_name: "Buch", email: "lisakbuch@gmail.com", party_id:1, meal_id:1)
+Guest.create(first_name:"hey", last_name:"Yo", email: "yo@yo.com", party_id:1,meal_id:1)
 Guest.create(first_name: "David", last_name: "Moroney", email: "dave@dave.com", party_id:3)
 Guest.create(first_name: "Kylie", last_name:"Minogue", email: "keylie@key.com", party_id:3)
 

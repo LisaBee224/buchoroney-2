@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Party.create(party_name: "Buch", rehearsal: true)
+Party.create(party_name: "Buch")
 Party.create(party_name: "Goodman")
 Party.create(party_name: "Speck")
 

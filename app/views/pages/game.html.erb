@@ -24,7 +24,9 @@
           var answerArray =['Wahoo!', 'Correct!', 'Damn straight!', 'Yes, indeedy!','Right on!']
           var rand = answerArray[Math.floor(Math.random() * answerArray.length)];
               $( this ).find( "p" ).html( rand );
+              $(this).find("p").addClass('movetxt');
               $( this).css("background-color", "#99f78f");
+              $(this).addClass('bg-animate');
               $(this).addClass('shadow');
               ui.draggable('disable');
         }

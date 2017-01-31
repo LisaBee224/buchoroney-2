@@ -7,12 +7,12 @@
         <%= guest.first_name %>
         <%= form_for guest, :remote => true, :url => { :action => "update", :controller=>"guests"}, :method=>"patch" do |f| %>
           <div class="panel panel-default panel-body">
-            <h3>Attending?</h3>
+            <h3>Is <%= guest.first_name %> attending?</h3>
 
-            <%= f.label :attending, "yes!" %>
+            <%= f.label :attending, "most definitely!" %>
             <%= f.radio_button :attending, true %>
 
-            <%= f.label :attending, "no" %>
+            <%= f.label :attending, "no can do" %>
             <%= f.radio_button :attending, false %>
           </div>
 
@@ -23,7 +23,7 @@
         <!-- form for guest's meal -->
         <%= form_for guest.meal, :remote => true, :url => { :action => "update", :controller=>"meals"}, :method=>"patch" do |f| %>
           <div class="panel panel-default panel-body">
-            <h3>Attending?</h3>
+            <h3>What's their chow of choice?</h3>
 
             <%= f.label :desc, "ice cream" %>
             <%= f.radio_button :desc, "ice cream" %>

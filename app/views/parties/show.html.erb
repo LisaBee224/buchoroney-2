@@ -1,2 +1,9 @@
-this is the party show page
-hey <%= @guest.first_name %>
+<div class="container">
+Sweet! Thanks for all the information. Here's the latest on your party:
+<%@party.guests.each do |guest|%>
+<ul>
+ <li><%= guest.first_name %>: <%if guest.attending%> is attending! <%else%> can't make it<%end%></li>
+ <%if guest.attending%><li><%= guest.first_name %> will be enjoying some <%=guest.meal.desc%></li><%end%>
+</ul>
+<%end%>
+</div>

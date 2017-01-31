@@ -2,7 +2,7 @@ class PartiesController < ApplicationController
 
   def show
     @guest ||= Guest.find_by(id: session[:guest_id])
-
+    @party = @guest.party
   end
 
   def edit

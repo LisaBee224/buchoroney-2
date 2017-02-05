@@ -21,7 +21,7 @@
 <body>
 
     <nav class="navbar navbar-default homenav">
-    <div class="container-fluid container-nav">
+    <div class="container-nav">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -42,7 +42,7 @@
 <li class="fifth <%= ' fifth-active' if current_page?('/pages/info')%>"><%= link_to '<i class="fa fa-heart-o" aria-hidden="true"></i><br>the big day'.html_safe, page_path('info') %></li>
           <li class="sixth <%= 'sixth-active' if current_page?('/pages/about')%>"><%= link_to '<i class="fa fa-hand-peace-o" aria-hidden="true"></i><br>Davey/Leesy'.html_safe, page_path('about') %></li>
           <li class="seventh <%=' seventh-active' if current_page?('/pages/registry')%>"><%= link_to '<i class="fa fa-gift" aria-hidden="true"></i><br>registry'.html_safe, page_path('registry') %></li>
-          <li class="eighth <%= 'eighth-active' if current_page?('/login')%>"><%= link_to  '<i class="fa fa-envelope-o" aria-hidden="true"></i><br>rsvp'.html_safe, '/login' %></li>
+          <li class="eighth" style="display:none;" <%= 'eighth-active' if current_page?('/login')%>"><%= link_to  '<i class="fa fa-envelope-o" aria-hidden="true"></i><br>rsvp'.html_safe, '/login' %></li>
 
         </ul>
       </div><!--collapse-->

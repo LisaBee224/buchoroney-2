@@ -26,6 +26,7 @@
               $( this ).find( "p" ).html( rand );
               $(this).find("p").addClass('movetxt');
               $( this).css("background-color", "#99f78f");
+              $( this).css("color", "#4caf50");
               $(this).addClass('bg-animate');
               $(this).addClass('shadow');
               ui.draggable('disable');
@@ -38,19 +39,23 @@
 </head>
 <body>
 <div class="container">
-<h1>How well do you know Lisa and Dave? Test your knowledge!</h1>
-<h3>drag the blue cards to the pink cards to make a match.</h2>
-<div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="lisa">
+<h1>How well do you know Lisa and Dave?</h1>
+<h3>drag the <span style="color:#afdcff;">blue</span> cards to the <span style="color:#f69c9d;">pink</span> cards to make a match.</h2>
+<div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="lisa-gen">
   <p>Lisa</p>
 </div>
 <div class="row">
-<div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="lisa">
+<div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="lisa-gen">
   <p>This person won a trip to L.A to appear as an extra on the show "What I Like About You."</p>
 </div>
 
 <div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="toe">
   <p>A big toenail.</p>
 </div>
+<div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="toe">
+  <p>Lisa is permanently missing a body part. What is it?</p>
+</div>
+
 
 <div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="david-berry">
   <p>Raspberries</p>
@@ -59,11 +64,11 @@
 <div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="david-berry">
   <p>This is Dave's favorite berry.</p>
 </div>
-<div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="lisa">
+<div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="lisa-gen">
   <p>This person is terrified of frogs and toads.</p>
 </div>
 
-<div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="lisa">
+<div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="lisa-gen">
   <p>Lisa</p>
 </div>
 
@@ -76,17 +81,17 @@
 <div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="lisa-berry">
   <p>This is Lisa's favorite berry.</p>
 </div>
- <div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="david">
+ <div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="david-gen">
   <p>Dave hates this.</p>
 </div>
 
 
 
- <div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="david">
+ <div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="david-gen">
   <p>This person has traveled to Russia!</p>
 </div>
 
-<div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="david">
+<div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="david-gen">
   <p>Condiments</p>
 </div>
 
@@ -114,7 +119,7 @@
 
 
 
-<div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="dave">
+<div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="dave-gen">
 
   <p>Dave</p>
 </div>
@@ -125,7 +130,7 @@
 
 
 
-<div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="dave">
+<div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="dave-gen">
   <p>Out of the two, this person has far better eyesight.</p>
 </div>
 

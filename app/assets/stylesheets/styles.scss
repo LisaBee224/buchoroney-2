@@ -160,7 +160,7 @@ h3{
   margin: .5em 0;
 }
 h4, .emph, .emph i{
-  color:#8bc34a;
+  color:#ffc107;
   font-weight:bold;
 }
 .small-p{
@@ -269,6 +269,14 @@ h4, .emph, .emph i{
 .prpnl-img {
   position:absolute; display:none; z-index:99; margin-left:250px;}
 #prpnl:hover .prpnl-img{
+  display:block;
+}
+#brian{
+  position:relative;
+}
+.brian-img {
+  position:absolute; z-index:99; margin-left:1050px;}
+#brian:hover .brian-img{
   display:block;
 }
 #snowfort{
@@ -668,6 +676,9 @@ margin:20px auto;
 }
 .prpnl-img {
   position:absolute; display:none; z-index:99; margin-left:20px;}
+}
+.brian-img{
+  position:absolute; display:none; z-index:99; margin-left:-50px;
 }
 
 
@@ -834,7 +845,7 @@ h3{
   margin: .5em 0;
 }
 h4, .emph, .emph i{
-  color:#8bc34a;
+  color:#ffc107;
   font-weight:bold;
 }
 .small-p{
@@ -945,6 +956,14 @@ h4, .emph, .emph i{
 #prpnl:hover .prpnl-img{
   display:block;
 }
+#brian{
+  position:relative;
+}
+.brian-img {
+  position:absolute; z-index:99; margin-left:1050px;}
+#brian:hover .brian-img{
+  display:block;
+}
 #snowfort{
 position:relative;
 }
@@ -1043,10 +1062,7 @@ position:relative;
   float:left;
   width:85%;
 }
-#myCarousel{
-  margin-top:1em;
 
-}
 .draggable{
   font-size:.875em;
 
@@ -1343,6 +1359,17 @@ margin:20px auto;
 .prpnl-img {
   position:absolute; display:none; z-index:99; margin-left:20px;}
 }
+.brian-img{
+  position:absolute; display:none; z-index:99; margin-left:-50px;
+}
 
+@media screen and (max-width:550px){
+  .container{
+    width:95%;
+  }
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+  border-color:#fff;
+}
 
 /*# sourceMappingURL=styles.css.map */

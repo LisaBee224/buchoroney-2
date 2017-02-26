@@ -689,5 +689,8 @@ margin:20px auto;
 .navbar-default .navbar-collapse, .navbar-default .navbar-form{
   border-color:#fff;
 }
+#myCarousel{
+  margin-top:0 !important;
+}
 
 /*# sourceMappingURL=styles.css.map */

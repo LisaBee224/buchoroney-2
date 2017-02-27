@@ -4,7 +4,7 @@
 <script>
 $(document).ready(function(){
 if ('ontouchstart' in window) {
-    $("#point").click(function (e) {
+    $("#point").on('touchend', function (e) {
         e.preventDefault();
     });
 }

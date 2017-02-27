@@ -29,7 +29,7 @@
               $( this).css("color", "#4caf50");
               $(this).addClass('bg-animate');
               $(this).addClass('shadow');
-              ui.draggable('disable');
+              ui.draggable.css('visibility','hidden');
         }
 
       }
@@ -71,7 +71,7 @@
 </div>
 
 
- <div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="lisa-berry">
+ <div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="lisa-berry">
   <p>Blackberries</p>
 </div>
 <div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="toe">
@@ -103,7 +103,7 @@
 </div>
 
 
-<div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="lisa-berry">
+<div class="col-xs-4 col-sm-3 col-md-3 droppable" data-num="lisa-berry">
   <p>This is Lisa's favorite berry.</p>
 </div>
  <div class="col-xs-4 col-sm-3 col-md-3 draggable" data-num="hamilton">

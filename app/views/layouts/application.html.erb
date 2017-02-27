@@ -17,6 +17,15 @@
         window.addEventListener("beforeunload", function () {
   $('.animate-in').classList.add("animate-out");
 });
+
+
+    var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (mobile) {
+
+        $('.fourth').css('display', 'none'); // OR you can use $('.navWrap').hide();
+    }
+
+
   </script>
 </head>
 <body>

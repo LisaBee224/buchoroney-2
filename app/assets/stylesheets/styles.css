@@ -642,6 +642,11 @@ margin:20px auto;
 
 
 }
+@media screen and (min-width:1089px){
+  .move-up{
+    margin-top:-16em;
+  }
+}
 
 @media screen and (max-width:1226px){
   .alpacas-p{

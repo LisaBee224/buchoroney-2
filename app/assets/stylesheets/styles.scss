@@ -642,6 +642,11 @@ margin:20px auto;
 
 
 }
+@media screen and (min-width:1089px){
+  .move-up{
+    margin-top:-16em;
+  }
+}
 
 @media screen and (max-width:1226px){
   .alpacas-p{
@@ -681,6 +686,9 @@ margin:20px auto;
   .brian-img{
   position:absolute; display:none;z-index:99; margin-left:-50px;
 }
+.point-img{
+  position:absolute; display:none;z-index:99; margin-left:-50px;
+}
 
 }
 
@@ -694,6 +702,10 @@ margin:20px auto;
 .prpnl-img {
   position:absolute; display:none; z-index:99; margin-left:20px;}
   .brian-img{
+  position:absolute; display:none;z-index:99; margin-left:-60px;
+}
+.point-img{
+
   position:absolute; display:none;z-index:99; margin-left:-60px;
 }
 

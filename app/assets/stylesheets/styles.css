@@ -158,6 +158,11 @@ h1{
 }
 h2{
   color:#8bc34a;
+  font-size:1.75em;
+  font-family: 'Quicksand', sans-serif;
+  color:#90dbd5;
+  text-align:center;
+  margin: .5em 0;
 }
 h3{
   font-size:1.5em;

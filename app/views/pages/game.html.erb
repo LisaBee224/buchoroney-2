@@ -12,13 +12,23 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
+$(".draggable").data({
+    'originalLeft': $("#draggable").css('left'),
+    'origionalTop': $("#draggable").css('top')
+});
+
+$(".finish").click(function() {
+
+});
   $( function() {
+
+    var points =0;
     $( ".draggable" ).draggable();
     $( ".droppable" ).droppable({
       drop: function( event, ui ) {
         var question = ui.draggable.data('num');
         var answer = $(this).data('num');
-        var points =0;
+
         if(question == answer){
           var answerArray =['Wahoo!', 'Correct!', 'Damn straight!', 'Yes, indeedy!','Right on!']
           var rand = answerArray[Math.floor(Math.random() * answerArray.length)];
@@ -32,13 +42,26 @@
               points +=1;
 
               if(points==15){
+
                   $('.btn-success').click();
+                  $('.modal').css('display','block');
+                  $('#modal-success').css('display','block');
+                  $('.modal').css('top','50%');
+                  $('.modal').css('opacity','1');
+                  $('.fade').css('opacity', '1');
               }
         }
 
+
       }
     });
+
   } );
+$('.finish').click(function(){
+
+           window.location.replace(true);
+
+        });
   </script>
 </head>
 <body>
@@ -46,12 +69,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <i class="glyphicon glyphicon-check"></i>
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                 </div>
                 <div class="modal-title">Party on, Garth!</div>
                 <div class="modal-body">You win!</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Alright.</button>
+                    <button type="button" class="btn btn-success finish" data-dismiss="modal">Alright.</button>
                 </div>
             </div> <!-- / .modal-content -->
         </div> <!-- / .modal-dialog -->

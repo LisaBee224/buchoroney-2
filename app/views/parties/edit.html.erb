@@ -1,18 +1,24 @@
+<div class="container">
 <h1>Hey there, <%=@guest%> <%= current_user.first_name%>! </h1>
   <% if @party.guests.length > 1 %>
-    <h2>people in your party:</h2>
-
+    <h2>we found the following people in your party:</h2>
+    <ul class="member-list">
+    <% @party.guests.each do |guest| %>
+    <li class="party-member-ind"><%= guest.first_name %></li>
+    <%end%>
+  </ul>
 
       <% @party.guests.each do |guest| %>
-        <%= guest.first_name %>
         <%= form_for guest, :remote => true, :url => { :action => "update", :controller=>"guests"}, :method=>"patch" do |f| %>
-          <div class="panel panel-default panel-body">
+          <div class="party-member">
+            <br/>
+            <br/>
             <h3>Is <%= guest.first_name %> attending?</h3>
 
             <%= f.label :attending, "most definitely!" %>
             <%= f.radio_button :attending, true %>
-
-            <%= f.label :attending, "no can do" %>
+            <br/>
+            <%= f.label :attending, "can't make it" %>
             <%= f.radio_button :attending, false %>
           </div>
 
@@ -22,17 +28,36 @@
 
         <!-- form for guest's meal -->
         <%= form_for guest.meal, :remote => true, :url => { :action => "update", :controller=>"meals"}, :method=>"patch" do |f| %>
-          <div class="panel panel-default panel-body">
-            <h3>What's their chow of choice?</h3>
-
-            <%= f.label :desc, "ice cream" %>
-            <%= f.radio_button :desc, "ice cream" %>
-
-            <%= f.label :desc, "fish pie" %>
-            <%= f.radio_button :desc, "fish pie" %>
-
-            <%= f.label :desc, "bubblegum" %>
-            <%= f.radio_button :desc, "bubblegum" %>
+          <div class="party-member">
+             <br/>
+            <br/>
+            <h3>What would <%=guest.first_name%> like to eat?</h3>
+            <ul class="meal-choices">
+              <li class="meal"><%= f.label :desc, "ice cream" %>
+                <br/>
+                <%= f.radio_button :desc, "ice cream" %>
+              </li>
+              <li class="meal">
+              <%= f.label :desc, "fish pie" %>
+              <br/>
+              <%= f.radio_button :desc, "fish pie" %>
+            </li>
+            <li class="meal">
+              <%= f.label :desc, "bubblegum" %>
+              <br/>
+              <%= f.radio_button :desc, "bubblegum" %>
+            </li>
+            <li class="meal">
+              <%= f.label :desc, "Kid's Meal" %>
+              <br/>
+              <%= f.radio_button :desc, "kids" %>
+            </li>
+            <li class="meal">
+              <%= f.label :desc, "N/A" %>
+              <br/>
+              <%= f.radio_button :desc, "NA" %>
+            </li>
+          </ul>
           </div>
 
           <%= f.hidden_field :guest_id, value: guest.id %>
@@ -43,6 +68,8 @@
         <!-- special jQuery button : submit both of these forms -->
       <%end%>
 
-      <button type="submit" name="Submit" id="<%= @party.id %>-rsvp-submit" class="rsvp-submit">Submit!</button>
+      <button type="submit" name="Submit" id="<%= @party.id %>-rsvp-submit" class="rsvp-submit">RSVP!</button>
 
 <%end %>
+
+</div>

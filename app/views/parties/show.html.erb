@@ -1,9 +1,12 @@
 <div class="container">
-Sweet! Thanks for all the information. Here's the latest on your party:
+  <div class="party-confirmation">
+    <h2>
+<span class="conf">Sweet!</span> Thanks for all the information.</h2> Here's the latest on your party:
 <%@party.guests.each do |guest|%>
 <ul>
- <li><%= guest.first_name %>: <%if guest.attending%> is attending! <%else%> can't make it<%end%></li>
+ <li><%= guest.first_name %>: <%if guest.attending%> will be boogying down with us! <%else%> can't make it<%end%></li>
  <%if guest.attending%><li><%= guest.first_name %> will be enjoying some <%=guest.meal.desc%></li><%end%>
 </ul>
 <%end%>
+</div>
 </div>

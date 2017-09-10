@@ -4,8 +4,9 @@
 <span class="conf">Sweet!</span> Thanks for all the information.</h2> Here's the latest on your party:
 <%@party.guests.each do |guest|%>
 <ul>
- <li><%= guest.first_name %>: <%if guest.attending%> will be boogying down with us! <%else%> can't make it<%end%></li>
- <%if guest.attending%><li><%= guest.first_name %> will be enjoying some <%=guest.meal.desc%></li><%end%>
+  <li><%= guest.first_name %>: <%if guest.attendingfri%> will be hanging out on Friday! <%else%> can't make it to Kimball's<%end%></li>
+ <li><%= guest.first_name %>: <%if guest.attendingsat%> will be boogying down with us on Saturday! <%else%> can't make it<%end%></li>
+ <%if guest.attendingsat%><li><%= guest.first_name %> will be enjoying some <%=guest.meal.desc%> on Saturday</li><%end%>
 </ul>
 <%end%>
 </div>

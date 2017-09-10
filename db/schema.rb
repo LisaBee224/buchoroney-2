@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 20160907204422) do
     t.string   "email"
     t.integer  "party_id"
     t.integer  "meal_id"
-    t.boolean  "attending"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "attendingsat"
+    t.boolean  "attendingfri"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "guests", ["meal_id"], name: "index_guests_on_meal_id", using: :btree

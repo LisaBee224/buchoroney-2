@@ -13,13 +13,20 @@
           <div class="party-member">
             <br/>
             <br/>
-            <h3>Is <%= guest.first_name %> attending?</h3>
+            <h3>Is <%= guest.first_name %> coming to Kimball's on Friday night?</h3>
 
-            <%= f.label :attending, "most definitely!" %>
-            <%= f.radio_button :attending, true %>
+            <%= f.label :attendingfri, "most definitely!" %>
+            <%= f.radio_button :attendingfri, true %>
             <br/>
-            <%= f.label :attending, "can't make it" %>
-            <%= f.radio_button :attending, false %>
+            <%= f.label :attendingfri, "can't make it" %>
+            <%= f.radio_button :attendingfri, false %><br/>
+            <h3>Is <%= guest.first_name %> attending the wedding on Saturday?</h3>
+
+            <%= f.label :attendingsat, "most definitely!" %>
+            <%= f.radio_button :attendingsat, true %>
+            <br/>
+            <%= f.label :attendingsat, "can't make it" %>
+            <%= f.radio_button :attendingsat, false %>
           </div>
 
           <%= f.hidden_field :guest_id, value: guest.id %>

@@ -6,8 +6,10 @@ class GuestsController < ApplicationController
 
   def update
     @guest = Guest.find_by(id: params[:guest][:guest_id])
-    attending = params[:guest][:attending] == "true" ? true : false
-    @guest.update_attributes(attending: attending)
+    attendingsat = params[:guest][:attendingsat] == "true" ? true : false
+    @guest.update_attributes(attendingsat: attendingsat)
+    attendingfri = params[:guest][:attendingfri] == "true" ? true : false
+    @guest.update_attributes(attendingfri: attendingfri)
 
     # redirect_to "parties/#{guest.party.id}/edit"
     render json: {success:true, party_id: @guest.party.id}.to_json

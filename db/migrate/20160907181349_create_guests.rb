@@ -6,7 +6,8 @@ class CreateGuests < ActiveRecord::Migration
       t.string :email
       t.references :party, index: true
       t.references :meal, index: true
-      t.boolean :attending
+      t.boolean :attendingsat
+      t.boolean :attendingfri
 
       t.timestamps null: false
     end

@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   def new
+
     @guest = Guest.find_by_email(params[:email])
+
     if @guest
       @party = @guest.party
       session[:guest_id] = @guest.id

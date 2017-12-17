@@ -4,9 +4,5 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-  def angular
-    @guest = Guest.first
-    binding.pry
-    render :json => @guest
-  end
+
 end

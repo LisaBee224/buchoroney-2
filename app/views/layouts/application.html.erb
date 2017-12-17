@@ -71,6 +71,9 @@ if (/Mobi/.test(navigator.userAgent)) {
 
 <div class="animate-in">
 <%= yield %>
+<% if flash[:error].present? %>
+  <p class='flash-error'><%= flash[:error] %></p>
+<% end %>
 </div>
 </body>
 </html>
